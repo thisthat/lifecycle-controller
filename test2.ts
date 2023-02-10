@@ -1,6 +1,7 @@
 import { sleep } from "https://deno.land/x/sleep/mod.ts";
 
-while(true) {
-    console.log(new Date())
+let i = 0
+while(i < 100) {
+    console.log(i)
     sleep(5000)
 }
