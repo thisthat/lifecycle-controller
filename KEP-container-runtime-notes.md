@@ -21,7 +21,7 @@ this is also runtime-agnostic.
 ### Notes
 
 `cat` exists when the other process finishes writing on stdout. This makes orchestrating the processes easy.
-
+There might be problems in "locking" the process from writing in the stdout while reading it from the other process. From initial limited testing, this might be only visible to the I/O with the terminal. Further stress-test are necessary.
 
 ## Known limitation / Alternative solutions
 
