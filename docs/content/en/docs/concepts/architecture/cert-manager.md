@@ -1,13 +1,18 @@
 ---
 title: Keptn Certificate Manager
 description: Learn how the cert-manager works
-icon: concepts
 layout: quickstart
 weight: 100
 hidechildren: false # this flag hides all sub-pages in the sidebar-multicard.html
 ---
 
 ### Keptn Cert Manager
+
+The Keptn Cert Manager automatically configures TLS certificates to
+[secure communication with the Kubernetes API](https://kubernetes.io/docs/concepts/security/controlling-access/#transport-security).
+You can instead
+[configure your own certificate manager](https://lifecycle.keptn.sh/docs/install/cert-manager/)
+for this purpose.
 
 The Lifecycle Toolkit includes a Mutating Webhook
 that requires TLS certificates to be mounted as a volume in its pod.
@@ -33,7 +38,7 @@ It is included to simplify installation for new users
 and because it is much smaller than most standard certificate managers.
 However, KLT is compatible with most certificate managers
 and can be configured to use another certificate manager if you prefer.
-See [Use your own cert-manager](../../install/cert-manager.md)
+See [Use Keptn with cert-manager.io](../../operate/cert-manager.md)
 for instructions.
 
 ## Invalid certificate errors

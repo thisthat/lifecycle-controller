@@ -8,7 +8,7 @@ A `KeptnTaskDefinition` defines tasks
 that are run by the Keptn Lifecycle Toolkit
 as part of the pre- and post-deployment phases of a
 [KeptnApp](./app.md) or
-[KeptnWorkload](../concepts/workloads/).
+[KeptnWorkload](../crd-ref/lifecycle/v1alpha3/#keptnworkload).
 
 A Keptn task executes as a
 [runner](https://docs.gitlab.com/runner/executors/kubernetes.html#how-the-runner-creates-kubernetes-pods)
@@ -23,11 +23,11 @@ differentiated by the `spec` section:
 
 * The `custom-runtime` runner provides
   a standard Kubernetes application container
-  that is run as part of a Kubernetes job..
+  that is run as part of a Kubernetes job.
   You define the runner, an application,
   and its runtime dependencies.
   This gives you the flexibility
-  to define tasks using the lanugage and facilities of your choice,
+  to define tasks using the language and facilities of your choice,
   although it is more complicated that using one of the pre-defined runtimes.
   See
   [Yaml synopsis for container-runtime](#yaml-synopsis-for-container-runtime)
@@ -96,7 +96,7 @@ but timeouts seem to be measured in seconds.
     and code the functionality in Deno script,
     which is similar to JavaScript and Typescript.
     See
-    [Yaml synopsis for deno-runtime contailer](#yaml-synopsis-for-deno-runtime-container).
+    [Yaml synopsis for deno-runtime container](#yaml-synopsis-for-deno-runtime-container).
     * **python** -- Use a `python-runtime` function
     and code the functionality in Python 3.
     See
@@ -107,7 +107,7 @@ but timeouts seem to be measured in seconds.
       for which you define the image, runner, runtime parameters, etc.
       and code the functionality to match the container you define.
       See
-      [Yaml synopsis for container-runtime contaier](#yaml-synopsis-for-container-runtime).
+      [Yaml synopsis for container-runtime container](#yaml-synopsis-for-container-runtime).
   * **retries** (optional) - specifies the number of times,
     a job executing the `KeptnTaskDefinition`
     should be restarted if an attempt is unsuccessful.
@@ -122,7 +122,7 @@ When using the `deno-runtime` runner to define a task,
 the task is coded in Deno-script
 (which is mostly the same as JavaScript and TypeScript)
 and executed in the
-[Deno](https://deno.com/runtime) runner,
+[Deno](https://deno.land/manual) runner,
 which is a lightweight runtime environment
 that executes in your namespace.
 Note that Deno has tighter restrictions
@@ -390,7 +390,7 @@ The `python-runtime` runner is used to define tasks using  Python 3 code.
 
 A Task executes the TaskDefinition of a
 [KeptnApp](app.md) or a
-[KeptnWorkload](../concepts/workloads).
+[KeptnWorkload](../crd-ref/lifecycle/v1alpha3/#keptnworkload).
 The execution is done by spawning a Kubernetes
 [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 to handle a single Task.
@@ -407,7 +407,7 @@ the size of the volume is 50% of the memory allocated for the node.
 
 A task can be executed either pre-deployment or post-deployment
 as specified in the pod template specs of your Workloads
-([Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/),
+[Deployments](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/),
 [StatefulSets](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/),
 [DaemonSets](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/),
 and
@@ -565,7 +565,7 @@ This task is then referenced in
 
 [app.yaml](https://github.com/keptn/lifecycle-toolkit/blob/main/examples/sample-app/version-3/app.yaml).
 
-This is a a trivial example that just runs `busybox`,
+This is a trivial example that just runs `busybox`,
 then spawns a shell and runs the `sleep 30` command.
 
 ## Examples for a python-runtime runner
@@ -574,7 +574,7 @@ then spawns a shell and runs the `sleep 30` command.
 
 You can embed python code directly in the task definition.
 This example prints data stored in the parameters map:
-{{< embed path="/operator/config/samples/python_execution/taskdefinition_pyfunction_inline.yaml" >}}
+{{< embed path="/lifecycle-operator/config/samples/python_execution/taskdefinition_pyfunction_inline.yaml" >}}
 
 ### Example 2: httpRef for a python-runtime runner
 
@@ -584,25 +584,25 @@ For example, we have a few examples available in the
 tree.
 
 Consider the following:
-{{< embed path="/operator/config/samples/python_execution/taskdefinition_pyfunction_configmap.yaml" >}}
+{{< embed path="/lifecycle-operator/config/samples/python_execution/taskdefinition_pyfunction_configmap.yaml" >}}
 
 ### Example 3: functionRef for a python-runtime runner
 
 You can refer to an existing `KeptnTaskDefinition`.
 This example calls the inline example
 but overrides the data printed with what is specified in the task:
-{{< embed path="/operator/config/samples/python_execution/taskdefinition_pyfunction_recursive.yaml" >}}
+{{< embed path="/lifecycle-operator/config/samples/python_execution/taskdefinition_pyfunction_recursive.yaml" >}}
 
 ### Example 4: ConfigMapRef for a python-runtime runner
 
-{{< embed path="/operator/config/samples/python_execution/taskdefinition_pyfunction_configmap.yaml" >}}
+{{< embed path="/lifecycle-operator/config/samples/python_execution/taskdefinition_pyfunction_configmap.yaml" >}}
 
 ### Allowed libraries for the python-runtime runner
 
 The following example shows how to use some of the allowed packages, namely:
 requests, json, git, and yaml:
 
-{{< embed path="/operator/config/samples/python_execution/taskdefinition_pyfunction_inline_printargs_py.yaml">}}
+{{< embed path="/lifecycle-operator/config/samples/python_execution/taskdefinition_pyfunction_inline_printargs_py.yaml">}}
 
 ### Passing secrets, environment variables and modifying the python command
 
@@ -612,11 +612,11 @@ and how to modify the python command.
 In this case the container runs with the `-h` option,
 which prints the help message for the python3 interpreter:
 
-{{< embed path="/operator/config/samples/python_execution/taskdefinition_pyfunction_use_envvars.yaml" >}}
+{{< embed path="/lifecycle-operator/config/samples/python_execution/taskdefinition_pyfunction_use_envvars.yaml" >}}
 
 ## More examples
 
-See the [operator/config/samples](https://github.com/keptn/lifecycle-toolkit/tree/main/operator/config/samples/function_execution)
+See the [lifecycle-operator/config/samples](https://github.com/keptn/lifecycle-toolkit/tree/main/lifecycle-operator/config/samples/function_execution)
 directory for more example `KeptnTaskDefinition` YAML files.
 
 ## Files
@@ -663,4 +663,5 @@ is allowed per `KeptnTaskDefinition`.
 * [KeptnApp](app.md)
 * [Working with tasks](../implementing/tasks)
 * [Pre- and post-deployment tasks](../implementing/integrate/#pre--and-post-deployment-checks)
-* [Orchestrate deployment checks](../getting-started/orchestrate)
+* [KeptnApp and KeptnWorkload resources](../concepts/architecture/keptn-apps/).
+* [Orchestrate deployment checks](../intro-klt/usecase-orchestrate.md)
