@@ -1,5 +1,5 @@
 ---
-title: Home
+title: Keptn Kubernetes Orchestration - Supercharge Your Deployments
 cascade:
   - _target:
       path: "/docs/**"
@@ -34,14 +34,13 @@ cascade:
     <img alt="keptn" src="/images/home/hero/keptn-logo-white.svg">
 </picture>
 </div>
-  <h1 class="display-1 mt-0 mt-md-5 pb-4">Lifecycle Toolkit</h1>
   <h2 class="styled display-3 mt-0 mb-4">Cloud native application lifecycle orchestration </h2>
 <div>
  <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "/docs" >}}">
   Docs <i class="fas fa-arrow-alt-circle-right ml-2"></i>
  </a>
-    <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/keptn/lifecycle-toolkit/releases">
-  Releases <i class="fab fa-github ml-2 "></i>
+    <a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "/docs/getting-started/" >}}">
+  Get Started <i class="fa-solid fa-rocket ml-2"></i>
  </a>
 </div>
 </div>
@@ -60,20 +59,20 @@ Make ANY Kubernetes Deployment observable
   read more <i class="fas fa-arrow-alt-circle-down ml-2"></i>
  </a>
 {{% /blocks/feature %}}
-{{% blocks/feature icon="home homedata" title="Deployment Data Access" %}}
+{{% blocks/feature icon="home homeorchestrate" title="Gather metrics from anywhere" %}}
 Standardize access for all Observability Data for K8s
 
 <!-- markdownlint-disable-next-line link-fragments -->
- <a class="btn btn-lg -bg-light mr-3 mb-4" href="#data-access">
+ <a class="btn btn-lg -bg-light mr-3 mb-4" href="#gather-metrics-from-anywhere">
   read more <i class="fas fa-arrow-alt-circle-down ml-2"></i>
  </a>
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="home homeorchestrate" title="Orchestrate Deployment Checks" %}}
+{{% blocks/feature icon="home homedata" title="Orchestrate Deployment Checks" %}}
 Gain confidence in your work with pre-/post-deployment checks
 
 <!-- markdownlint-disable-next-line link-fragments -->
- <a class="btn btn-lg -bg-light mr-3 mb-4" href="#deployment-check-orchestration">
+ <a class="btn btn-lg -bg-light mr-3 mb-4" href="#orchestrate-deployment-checks">
   read more <i class="fas fa-arrow-alt-circle-down ml-2"></i>
  </a>
 {{% /blocks/feature %}}
@@ -101,7 +100,7 @@ Gain confidence in your work with pre-/post-deployment checks
 {{% readfile "partials/_index-observability-right.md" %}}
 </div>
 </div>
-<a class="btn -bg-green" href="./docs/getting-started/">
+<a class="btn -bg-green" href="./docs/intro/#observability">
     Get Started!
 </a>
 </div>
@@ -114,13 +113,13 @@ Gain confidence in your work with pre-/post-deployment checks
 <div class="mx-auto">
 <div class="d-flex flex-row flex-wrap" >
 <div class="whykeptn whykeptn-left w-25">
-{{% readfile "partials/_index-data-access-left.md" %}}
+{{% readfile "partials/_index-gather-metrics-left.md" %}}
 </div>
 <div class="whykeptn whykeptn-right ">
-{{% readfile "partials/_index-data-access-right.md" %}}
+{{% readfile "partials/_index-gather-metrics-right.md" %}}
 </div>
 </div>
-<a class="btn -bg-green" href="./docs/getting-started/">
+<a class="btn -bg-green" href="./docs/intro/#metrics">
     Get Started!
 </a>
 </div>
@@ -138,7 +137,7 @@ Gain confidence in your work with pre-/post-deployment checks
 {{% readfile "partials/_index-deployment-checks-right.md" %}}
 </div>
 </div>
-<a class="btn -bg-green" href="./docs/getting-started/">
+<a class="btn -bg-green" href="./docs/intro/#release-lifecycle-management">
     Get Started!
 </a>
 </div>
